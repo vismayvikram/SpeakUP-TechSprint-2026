@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Speak Up</title>
+    <link rel="stylesheet" href="studentCss.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="profile-section">
+                <div class="avatar">S</div>
+                <h3>Student Portal</h3>
+                <p>Welcome, Guest</p>
+            </div>
+
+            <div class="nav-links">
+                <a href="#" class="nav-item active" id="home">🏠 Home</a>
+                <a href="#" class="nav-item" id="history">🎫 History</a>
+            </div>
+
+            <div class="bottom-links">
+                <button id="btnDarkMode" class="nav-item mode-toggle">🌙 Dark Mode</button>
+                <a href="#" class="nav-item logout" id="logout">↪ Logout</a>
+            </div>
+        </div>
+
+        <div class="main-content centered-layout">
+    
+    <div class="brand-header">
+        <span class="sub-brand">SPEAK UP</span>
+        <h1>YOUR VOICE MATTERS</h1>
+        <div class="teal-underline"></div>
+    </div>
+
+    <div class="container" id="form">
+        <h2 class="form-title">Complaint Form</h2>
+
+        <div class="formGroup">
+            <textarea id="issueDetails" rows="8" placeholder="Type here..." maxlength="500"></textarea>
+        </div>
+
+        <button class="submit">SUBMIT</button>
+    </div>
+
+    <div class="container hidden" id="success"> 
+        <div class="success-icon">✓</div>
+        <h2>Request Received!</h2>
+        <p class="subtitle">Thank you for your feedback. We have logged your complaint.</p>
+        <button class="submit">Submit Another</button>
+    </div>
+
+    <div class="container hidden" id="historyCard">
+        <h2 class="form-title">My Complaint History</h2>
+
+        <div class="card">
+            <table id="ticketsTable">
+                <thead>
+                    <tr>
+                        <th>COMPLAINT ID</th>
+                        <th>CATEGORY</th>
+                        <th>DESCRIPTION</th>
+                        <th>DATE</th>
+                        <th>STATUS</th>
+                    </tr>
+                </thead>
+                <tbody id="historyTableBody">
+                </tbody>
+            </table>
+            <div id="emptyMessage" class="hidden">You have not submitted any tickets yet.</div>
+        </div>
+    </div>
+
+</div>
+    </div>
+
+    <script type="module" src="firebaseConfig.js"></script>
+    <script type="module" src="studentJs.js"></script>
+</body>
+</html>

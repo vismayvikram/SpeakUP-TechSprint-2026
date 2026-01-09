@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - Speak Up</title>
+    <link rel="stylesheet" href="adminCss.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <div class="avatar">A</div>
+                <h3>Admin Portal</h3>
+                <p>System Administrator</p>
+            </div>
+
+            <div class="barBtn">
+                <a href="#" class="btn">📊 Overview</a>
+                <a href="#" class="btn active">💬 Complaints</a>
+                <a href="#" class="btn">⚙️ Settings</a>
+            </div>
+
+            <div class="barBtm">
+                <button id="btnDarkMode" class="btn">🌙 Dark Mode</button>
+                <a href="#" class="btn logout" id="logout">↪ Logout</a>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="header">
+                <h1>SpeakUP Complaint Management System</h1>
+                <p>Manage and resolve user submitted issues efficiently.</p>
+            </div>
+
+            <div class="table">
+                <h2>Complaints</h2>
+                <div class="filter">
+                        <button class="filterBtn">FILTER</button>
+                        <select class="filterSelect" id="catFilter" title="By Category">
+                            <option value="all">All Categories</option>
+                            <option value="IT">IT</option>
+                            <option value="Academic">Academic</option>
+                            <option value="Facility">Facility</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Services">Services</option>
+                            <option value="Safety">Safety</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <button class="spamButt" id="spamBtn">SPAM</button>
+
+                </div>
+                <div class="card">
+                    <table id="complaintsTable">
+                        <thead>
+                            <tr>
+                                <th>COMPLAINT ID</th>
+                                <th>CATEGORY</th>
+                                <th>DESCRIPTION</th>
+                                <th>DATE</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            </tbody>
+                    </table>
+                    <div id="emptyMessage" class="hidden">No tickets found in the database.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="ticketModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            
+            <h2 id="modalTitle">Ticket Details</h2>
+            
+            <div class="modal-grid">
+                <div class="field-group">
+                    <label>Complaint ID</label>
+                    <p id="m_id" class="highlight-text">#T-0000</p>
+                </div>
+                <div class="field-group">
+                    <label>Category</label>
+                    <p id="m_category">General</p>
+                </div>
+                <div class="field-group">
+                    <label>Date</label>
+                    <p id="m_date">Oct 24, 2023</p>
+                </div>
+                <div class="field-group">
+                    <label>Current Status</label>
+                    <p id="m_status">Open</p>
+                </div>
+            </div>
+
+            <div class="field-group full-width">
+                <label>Full Complaint</label>
+                <div id="m_issue" class="issue-box">
+                    </div>
+            </div>
+            <div class="field-group full-width">
+                <label>Suggested Course of Action</label>
+                <div id="m_sugges" class="issue-box">
+                    </div>
+            </div>
+
+            <div class="modal-actions">
+                <button id="btnPending" class="action-btn btn-pending">⏳ Mark Pending</button>
+                <button id="btnResolved" class="action-btn btn-resolved">✅ Mark Resolved</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="firebaseConfig.js"></script>
+    <script type="module" src="adminJs.js"></script>
+</body>
+</html>

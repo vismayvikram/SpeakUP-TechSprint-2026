@@ -1,0 +1,281 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa; 
+    color: #111827;
+}
+
+.dashboard-container { display: flex; min-height: 100vh; }
+
+
+.sidebar {
+    width: 260px;
+    background-color: #ffffff; 
+    border-right: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    position: fixed;
+    height: 100%;
+}
+
+/* Sidebar Components */
+.profile-section { text-align: center; margin-bottom: 3rem; }
+
+.avatar {
+    width: 100px; height: 100px;
+    background-color: #e0e7ff; color: #3730a3;           
+    border-radius: 50%; margin: 0 auto 10px;     
+    display: flex; justify-content: center; align-items: center;
+    font-size: 3rem; font-weight: 700; border: 1px solid #c7d2fe; 
+}
+
+.profile-section h3 { margin: 10px 0 5px; font-size: 1.3rem; color: #00695c; }
+.profile-section p { margin: 0; color: #6b7280; font-size: 0.85rem; }
+
+.nav-links { flex: 1; padding: 10px 0; }
+
+.nav-item {
+    display: block; padding: 12px 15px; margin-bottom: 5px;
+    color: #6b7280; text-decoration: none; border-radius: 8px;
+    font-weight: 500; border: none; background: none; width: 100%;
+    text-align: left; font-size: 1rem; cursor: pointer;
+}
+
+.nav-item:hover { background-color: #f3f4f6; color: #111827; }
+
+.nav-item.active { 
+    background-color: #e0f2f1; color: #00695c;
+    font-weight: 600; border-left: 4px solid #00695c;
+}
+.nav-item.logout { color: #ef4444; margin-top: 10px; }
+
+
+/* ============================
+   2. MAIN CONTENT AREA
+   ============================ */
+.main-content { flex: 1; margin-left: 260px; padding: 3rem 4rem; }
+
+.page-header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.page-header p { color: #6b7280; margin-top: 0; margin-bottom: 2rem; }
+
+/* The White Card Container */
+.container {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    padding: 40px;
+    max-width: 700px;
+    
+}
+
+/* ============================
+   3. FORM ELEMENTS
+   ============================ */
+#form {
+    margin: 0 auto;
+
+}
+
+.formGroup { margin-bottom: 20px; }
+
+label {
+    display: block; margin-bottom: 8px;
+    font-weight: 600; font-size: 0.9rem; color: #374151;
+}
+
+textarea {
+    width: 100%; padding: 15px; font-size: 1rem;
+    border: 1px solid #d1d5db; border-radius: 8px;
+    background-color: #f9fafb; color: #111827;
+    outline: none; resize: vertical; font-family: inherit;
+}
+textarea:focus { border-color: #00695c; box-shadow: 0 0 0 3px rgba(0, 105, 92, 0.1); }
+
+/* The Teal Action Button */
+.submit {
+    width: 100%; padding: 14px;
+    background-color: #00695c; color: white;
+    border: none; border-radius: 8px;
+    font-size: 1rem; font-weight: 600; cursor: pointer;
+    margin-top: 10px;
+}
+.submit:hover { background-color: #004d40; }
+
+
+/* ============================
+   4. SUCCESS STATE & UTILS
+   ============================ */
+.hidden { display: none !important; }
+
+.success-icon { font-size: 4rem; color: #10b981; margin-bottom: 10px; text-align: center; }
+#success h2 { margin: 10px 0; color: #111827; text-align: center; }
+.subtitle { text-align: center; color: #6b7280; }
+
+
+/* ============================
+   5. DARK MODE
+   ============================ */
+body.dark-mode { background-color: #0d1316; color: #e2e8f0; }
+
+body.dark-mode .sidebar { background-color: #0d1316; border-right-color: #1e292e; }
+body.dark-mode .container { background-color: #141c1f; border-color: #1e292e; }
+body.dark-mode textarea { background-color: #0d1316; border-color: #374151; color: #f3f4f6; }
+
+body.dark-mode label, 
+body.dark-mode .page-header p { color: #9ca3af; }
+
+body.dark-mode #success h2 { color: #f3f4f6; }
+
+body.dark-mode .nav-item { color: #94a3b8; }
+body.dark-mode .nav-item:hover { background-color: #162225; color: #f1f5f9; }
+body.dark-mode .nav-item.active { background-color: rgba(20, 184, 166, 0.15); color: #2dd4bf; border-left-color: #2dd4bf; }
+/* ============================
+   NEW CENTERED LAYOUT
+   ============================ */
+
+/* 1. Center the Main Content Area */
+.main-content.centered-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* 2. "YOUR VOICE MATTERS" Typography */
+.brand-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.sub-brand {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #9ca3af;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.brand-header h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #111827;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.teal-underline {
+    width: 150px;
+    height: 6px;
+    background-color: #00695c;
+    border-radius: 3px;
+    margin: 10px auto 0;
+    transform: rotate(-1deg);
+}
+
+/* 3. Form Card Updates */
+.container {
+    width: 100%;
+    max-width: 650px;
+    padding: 40px 50px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+#historyCard {
+    max-width: 1000px;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+
+/* 4. Textarea */
+textarea {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    resize: none;
+    margin-bottom: 20px; /* Added margin since footer is gone */
+}
+
+/* 5. Centered Button */
+.submit {
+    display: block;
+    width: auto;
+    margin: 0 auto;
+    padding: 12px 60px; /* Wider button looks better without icon */
+    border-radius: 6px;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 6px rgba(0, 105, 92, 0.2);
+}
+
+
+
+/* === DARK MODE TWEAKS === */
+body.dark-mode .brand-header h1 { color: #f3f4f6; }
+body.dark-mode .title-divider { background-color: #374151; }
+
+body.dark-mode .card { background-color: #141c1f; border-color: #1e292e; }
+
+body.dark-mode th { background-color: #1e292e; color: #94a3b8; border-bottom-color: #374151; }
+
+body.dark-mode td { color: #e2e8f0; border-bottom-color: #374151; }
+
+body.dark-mode tr:hover { background-color: #162225; }
+
+body.dark-mode .complaint-id { color: #2dd4bf; }
+
+body.dark-mode .description { color: #9ca3af; }
+
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    background-color: #f9fafb;
+    color: #6b7280;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 0.95rem;
+    vertical-align: middle;
+    color: #374151;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+tr:last-child td { border-bottom: none; }
+tr:hover { background-color: #f9fafb; }
+
+.complaint-id { font-weight: 600; color: #00695c; }
+.description { color: #6b7280; max-width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Speak Up</title>
+    <link rel="stylesheet" href="loginCss.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="page">
+        
+        <div class="left">
+            <div class="brand">
+                <div class="logo">S</div>
+                <span>Speak UP</span>
+            </div>
+
+            <div class="login">
+                <h2>Welcome Back</h2>
+                <p class="subtitle">Please enter your details to sign in.</p>
+
+                <div class="toggle">
+                    <button id="toggleStudent" class="btnToggle active">Student</button>
+                    <button id="toggleAdmin" class="btnToggle">Admin</button>
+                </div>
+
+                <div class="form">
+                    <label for="username">Username / ID</label>
+                    <input type="text" id="username" placeholder="Enter your ID">
+                </div>
+                
+                <div class="form">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="••••••••">
+                </div>
+
+                <div id="messageBox" class="message hidden"></div>
+
+                <button id="btnLogin" class="submit-btn">LOG IN</button>
+
+                <p class="footer">Don't have an account? Login as a student to auto-register.</p>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="contact-link">Contact Us ↗</div>
+    
+            <div class="about-content">
+                <h1>Make Your Voice Heard.</h1>
+                <p>SpeakUp is the university's premier platform for conflict resolution and facility management. We bridge the gap between students and administration.</p>
+        
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="firebaseConfig.js"></script>
+    <script type="module" src="loginJs.js"></script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa; 
+    color: #111827;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* === SIDEBAR === */
+.sidebar {
+    width: 260px;
+    background-color: #ffffff; 
+    border-right: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    position: fixed;
+    height: 100%;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.avatar {
+    width: 100px;
+    height: 100px;
+    background-color: #e0e7ff;
+    color: #3730a3;           
+    border-radius: 50%;      
+    margin: 0 auto 10px;     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 3rem;         
+    font-weight: 700;          
+    border: 1px solid #c7d2fe; 
+}
+
+.profile h3 { margin: 10px 0 5px; font-size: 1.3rem; color: #13856f; }
+
+.profile p { margin: 0; color: #6b7280; font-size: 0.85rem; }
+
+.barBtn { flex: 1;
+    padding: 10px 0; 
+}
+
+.btn {
+    display: block;
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    color: #6b7280;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.btn:hover { background-color: #f3f4f6; color: #111827; }
+
+.btn.active { 
+    background-color: #e0f2f1; /* Light Teal bg */
+    color: #00695c;            /* Dark Teal text */
+    font-weight: 600; 
+    border-left: 4px solid #00695c; /* The vertical accent bar seen in the image */
+    border-radius: 4px;        /* Slightly sharper edges to match the bar */
+}
+
+.btn.logout { color: #ef4444; margin-top: 10px; }
+
+/* === MAIN CONTENT === */
+.main {
+    flex: 1;
+    margin-left: 260px;
+    padding: 3rem 4rem;
+}
+
+/* UPDATED: Changed from 'header' tag to class */
+.header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+
+.header p { color: #6b7280; margin-top: 0; }
+
+.table h2 { margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.25rem; }
+
+/* === TABLE CARD === */
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    background-color: #f9fafb;
+    color: #6b7280;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 0.95rem;
+    vertical-align: middle;
+    color: #374151;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+tr:last-child td { border-bottom: none; }
+tr:hover { background-color: #f9fafb; }
+
+.complaint-id { font-weight: 600; color: #00695c; }
+.description { color: #6b7280; max-width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* === DARK MODE === */
+body.dark-mode {
+    background-color: #0d1316; 
+    color: #e2e8f0;            
+}
+
+body.dark-mode .sidebar {
+    background-color: #0d1316;
+    border-right-color: #1e292e; 
+}
+body.dark-mode .btn { 
+    color: #94a3b8;
+}
+
+body.dark-mode .btn:hover { 
+    background-color: #162225; 
+    color: #f1f5f9; 
+}
+body.dark-mode .btn.active { 
+    background-color: rgba(20, 184, 166, 0.15); 
+    color: #2dd4bf; 
+    border-left: 4px solid #2dd4bf;
+}
+
+body.dark-mode .profile h3 { color: #f1f5f9; }
+body.dark-mode .profile p { color: #94a3b8; }
+body.dark-mode .header p { color: #94a3b8; }
+
+/* === CARDS & TABLES (Dark Mode) === */
+body.dark-mode .card {
+    background-color: #141c1f;
+    border-color: #1e292e;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+body.dark-mode th {
+    background-color: #1a2428;
+    color: #cbd5e1;
+    border-bottom-color: #2d3a3f;
+}
+body.dark-mode td {
+    border-bottom-color: #1e292e;
+    color: #cbd5e1;
+}
+body.dark-mode tr:hover {
+    background-color: #1a2428; 
+}
+body.dark-mode .description {
+    color: #94a3b8;
+}
+body.dark-mode .complaint-id {
+    color: #2dd4bf; 
+}
+.hidden {
+    display: none !important;
+}
+
+/* === MODAL OVERLAY === */
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+}
+
+/* === MODAL CARD === */
+.modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 500px;
+    max-width: 90%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    position: relative;
+    border: 1px solid #e5e7eb;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #9ca3af;
+    cursor: pointer;
+}
+.close-btn:hover { color: #111827; }
+
+.modal-content h2 { margin-top: 0; color: #111827; font-size: 1.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 15px; margin-bottom: 20px;}
+
+
+
+/* === MODAL GRID LAYOUT === */
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.field-group label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin-bottom: 5px;
+}
+
+.field-group p { margin: 0; font-weight: 500; color: #111827; }
+.highlight-text { color: #00695c !important; font-weight: 700 !important; }
+
+.issue-box {
+    background-color: #f9fafb;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+    min-height: 80px;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* === ACTION BUTTONS === */
+.modal-actions {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.action-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: transform 0.1s;
+}
+.action-btn:active { transform: scale(0.98); }
+
+.btn-pending { background-color: #fef3c7; color: #d97706; } /* Yellow/Orange */
+.btn-pending:hover { background-color: #fde68a; }
+
+.btn-resolved { background-color: #d1fae5; color: #059669; } /* Green */
+.btn-resolved:hover { background-color: #a7f3d0; }
+
+/* === DARK MODE MODAL === */
+body.dark-mode .modal-content {
+    background-color: #141c1f;
+    border-color: #1e292e;
+}
+body.dark-mode .modal-content h2 { color: #f1f5f9; border-bottom-color: #1e292e; }
+body.dark-mode .close-btn:hover { color: #f1f5f9; }
+body.dark-mode .field-group p { color: #e2e8f0; }
+body.dark-mode .issue-box {
+    background-color: #0d1316;
+    border-color: #1e292e;
+    color: #cbd5e1;
+}
+body.dark-mode .highlight-text { color: #2dd4bf !important; }
+
+
+
+.filter {
+    flex: 1;
+    display: flex;
+    justify-content: left;
+    justify-items: center;
+    gap: 10px;
+    padding-left: 20px;
+    padding-bottom: 15px;
+}
+.filterBtn {
+    background-color: #ced9d4;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 550;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+.filterBtn:hover {
+    background-color: #a3baba;
+}
+.filterBtn:active {
+    transform: scale(0.9999);
+    background-color: #7f9a99;
+}
+
+.filterSelect {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+.filterSelect:hover {
+    border-color: #9ca3af;
+}
+
+.spamButt {
+    background-color: #ef4444; /* Red */
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 550;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+    margin-left: auto;
+}
+.spamButt:hover {
+    background-color: #dc2626; /* Darker Red on hover */
+}
+.spamButt:active {
+    transform: scale(0.98);
+    background-color: #b91c1c; /* Even Darker Red on click */
+}
+.clicked {
+    background-color: #5a0303;
+    border-color: #b91c1c;
+}
